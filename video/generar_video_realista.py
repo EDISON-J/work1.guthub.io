@@ -6,7 +6,7 @@ fundidos, subtítulos y voces naturales en español generadas con Piper TTS.
 Requisitos: python3, pillow, numpy, ffmpeg (con rubberband), piper-tts y los
 modelos de voz es_MX-ald-medium y es_MX-claude-high en VOCES_DIR.
 
-Uso:  VOCES_DIR=/ruta/a/voces python3 video/generar_video_realista.py
+Uso:  python3 video/generar_video_realista.py   (voces en /opt/piper-voices o VOCES_DIR)
 """
 import math
 import os
@@ -25,7 +25,7 @@ SR = 22050
 HERE = os.path.dirname(os.path.abspath(__file__))
 FOTOS = os.path.join(HERE, "fotos")
 OUT = os.path.join(HERE, "padre_e_hijo_realista.mp4")
-VOCES = os.environ.get("VOCES_DIR", os.path.join(HERE, "voces"))
+VOCES = os.environ.get("VOCES_DIR", "/opt/piper-voices")
 FONT_R = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FONT_B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_S = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
